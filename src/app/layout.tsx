@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Owl English School | 北欧スタイルの完全プライベート英語スクール",
+  title: "Owl English School | オンライン完全個別英語家庭教師",
   description:
-    "静謐な空間で学ぶ、完全プライベート英語スクール。英検・TOEIC・TOEFL・英会話コースを完全オーダーメイドのカリキュラムで提供します。",
+    "全国どこからでも受講できる完全マンツーマン英語家庭教師。英検・TOEIC・TOEFL・英会話を完全個別カリキュラムで提供。無料体験レッスン受付中。",
 };
 
 export default function RootLayout({
@@ -26,7 +28,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
