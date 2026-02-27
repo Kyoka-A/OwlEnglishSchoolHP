@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ToeflScoreChart } from "./components/ToeflScoreChart";
 
 export default function Home() {
   return (
@@ -54,7 +55,7 @@ export default function Home() {
               lineHeight: 1.3,
             }}
           >
-            知性は、静寂の中で<br />目を覚ます。
+            一対一で、<br />本気の英語を。
           </h1>
           <p
             className="text-white mb-6 font-light"
@@ -66,7 +67,7 @@ export default function Home() {
               fontStyle: "italic",
             }}
           >
-            The Wisdom in Quietness.
+            One-on-One. Seriously.
           </p>
           <p
             className="text-white mb-14 font-light"
@@ -101,7 +102,7 @@ export default function Home() {
                 el.style.transform = "translateY(0)";
               }}
             >
-              無料体験レッスンへ
+              体験レッスンへ（1,000円）
             </Link>
             <a
               href="#concept"
@@ -144,17 +145,11 @@ export default function Home() {
       ============================================================ */}
       <section id="concept" className="py-32" style={{ backgroundColor: "#F7F6F2" }}>
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <p
-            className="mb-5 tracking-widest text-xs uppercase"
-            style={{
-              color: "#1A4A52",
-              letterSpacing: "0.28em",
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 500,
-            }}
-          >
-            — Concept —
-          </p>
+          <div className="flex items-center justify-center mb-6">
+            <span style={{ display: "block", width: "40px", height: "1px", backgroundColor: "#1A4A52", opacity: 0.25 }} />
+            <span style={{ display: "block", width: "5px", height: "5px", transform: "rotate(45deg)", backgroundColor: "#1A4A52", opacity: 0.25, margin: "0 10px", flexShrink: 0 }} />
+            <span style={{ display: "block", width: "40px", height: "1px", backgroundColor: "#1A4A52", opacity: 0.25 }} />
+          </div>
           <h2
             className="mb-3 font-light tracking-widest uppercase"
             style={{
@@ -186,7 +181,7 @@ export default function Home() {
             </strong>
             で受講できるマンツーマン英語家庭教師サービスです。
             <br />
-            場所を選ばず、ご自宅から——フクロウが静寂の森で知恵を蓄えるように、雑音のない集中した環境で、英語力を着実に高めます。
+            場所を選ばず、ご自宅から、雑音のない集中した環境で英語力を着実に高めます。
             <br />
             画一的なクラス授業ではなく、あなただけのカリキュラムと専属講師による
             <strong style={{ fontWeight: 500, color: "#1A4A52" }}>
@@ -246,17 +241,11 @@ export default function Home() {
       <section id="courses" className="py-32" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-16">
-            <p
-              className="mb-4 tracking-widest text-xs uppercase"
-              style={{
-                color: "#1A4A52",
-                letterSpacing: "0.28em",
-                fontFamily: "'Montserrat', sans-serif",
-                fontWeight: 500,
-              }}
-            >
-              — Courses —
-            </p>
+            <div className="flex items-center justify-center mb-6">
+              <span style={{ display: "block", width: "40px", height: "1px", backgroundColor: "#1A4A52", opacity: 0.25 }} />
+              <span style={{ display: "block", width: "5px", height: "5px", transform: "rotate(45deg)", backgroundColor: "#1A4A52", opacity: 0.25, margin: "0 10px", flexShrink: 0 }} />
+              <span style={{ display: "block", width: "40px", height: "1px", backgroundColor: "#1A4A52", opacity: 0.25 }} />
+            </div>
             <h2
               className="font-light tracking-widest"
               style={{
@@ -305,7 +294,7 @@ export default function Home() {
               <div style={{ height: "4px", backgroundColor: "#1A4A52" }} />
               <div className="overflow-hidden" style={{ height: "240px" }}>
                 <img
-                  src="https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?auto=format&fit=crop&w=900&q=80"
+                  src="/student-english-tutoring.jpg"
                   alt="中高生向け英語家庭教師"
                   className="w-full h-full object-cover"
                   style={{ transform: "scale(1.04)", transition: "transform 0.7s ease" }}
@@ -503,17 +492,11 @@ export default function Home() {
       <section id="instructor" className="py-32" style={{ backgroundColor: "#0F2E34" }}>
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-16">
-            <p
-              className="mb-4 tracking-widest text-xs uppercase"
-              style={{
-                color: "#8FA3AD",
-                letterSpacing: "0.28em",
-                fontFamily: "'Montserrat', sans-serif",
-                fontWeight: 500,
-              }}
-            >
-              — Our Strength —
-            </p>
+            <div className="flex items-center justify-center mb-6">
+              <span style={{ display: "block", width: "40px", height: "1px", backgroundColor: "#1A4A52", opacity: 0.25 }} />
+              <span style={{ display: "block", width: "5px", height: "5px", transform: "rotate(45deg)", backgroundColor: "#1A4A52", opacity: 0.25, margin: "0 10px", flexShrink: 0 }} />
+              <span style={{ display: "block", width: "40px", height: "1px", backgroundColor: "#1A4A52", opacity: 0.25 }} />
+            </div>
             <h2
               className="font-light tracking-widest"
               style={{
@@ -682,7 +665,138 @@ export default function Home() {
       </section>
 
       {/* ============================================================
-          5. BOTTOM CTA
+          5. RESULTS
+      ============================================================ */}
+      <section className="py-24" style={{ backgroundColor: "#ffffff" }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center mb-6">
+              <span style={{ display: "block", width: "40px", height: "1px", backgroundColor: "#1A4A52", opacity: 0.25 }} />
+              <span style={{ display: "block", width: "5px", height: "5px", transform: "rotate(45deg)", backgroundColor: "#1A4A52", opacity: 0.25, margin: "0 10px", flexShrink: 0 }} />
+              <span style={{ display: "block", width: "40px", height: "1px", backgroundColor: "#1A4A52", opacity: 0.25 }} />
+            </div>
+            <h2
+              className="font-light tracking-widest"
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontSize: "clamp(1.25rem, 2.5vw, 2rem)",
+                color: "#1A4A52",
+                letterSpacing: "0.25em",
+              }}
+            >
+              受講事例
+            </h2>
+            <div className="mx-auto mt-5" style={{ width: "40px", height: "2px", backgroundColor: "#1A4A52" }} />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+            {/* Case 1: Y さん・英会話コース */}
+            <div style={{ border: "1px solid #EAE6DF", backgroundColor: "#F7F6F2", overflow: "hidden" }}>
+              <div className="overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                <img
+                  src="/class_situation.jpg"
+                  alt="オンライン英会話レッスンの様子"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <span
+                    className="text-xs px-3 py-1"
+                    style={{
+                      fontFamily: "'Montserrat', sans-serif",
+                      backgroundColor: "#9CA795",
+                      color: "#ffffff",
+                      letterSpacing: "0.1em",
+                    }}
+                  >
+                    英会話コース
+                  </span>
+                  <span
+                    className="text-xs font-light"
+                    style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#8FA3AD", letterSpacing: "0.06em" }}
+                  >
+                    Masaki 先生担当
+                  </span>
+                </div>
+                <p
+                  className="mb-4 font-light text-sm leading-loose"
+                  style={{
+                    fontFamily: "'Noto Sans JP', sans-serif",
+                    color: "#5A5A5A",
+                    letterSpacing: "0.05em",
+                    lineHeight: 2.0,
+                    borderLeft: "3px solid #9CA795",
+                    paddingLeft: "1rem",
+                    fontStyle: "italic",
+                  }}
+                >
+                  「最初は簡単な挨拶もままならなかったのですが、毎回のレッスンで少しずつ自信がついてきました。教科書では出てこないような自然なフレーズや言い回しをたくさん教えてもらえて、話すのが楽しくなってきました。」
+                </p>
+                <p
+                  className="text-xs font-light text-right"
+                  style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#AAAAAA", letterSpacing: "0.08em" }}
+                >
+                  — Y さん（20代・英会話コース受講中）
+                </p>
+              </div>
+            </div>
+
+            {/* Case 2: M さん・TOEFLコース */}
+            <div style={{ border: "1px solid #EAE6DF", backgroundColor: "#F7F6F2", overflow: "hidden" }}>
+              <div className="px-8 pt-8 pb-4" style={{ backgroundColor: "#F7F6F2" }}>
+                <ToeflScoreChart />
+              </div>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <span
+                    className="text-xs px-3 py-1"
+                    style={{
+                      fontFamily: "'Montserrat', sans-serif",
+                      backgroundColor: "#1A4A52",
+                      color: "#ffffff",
+                      letterSpacing: "0.1em",
+                    }}
+                  >
+                    TOEFL® 対策コース
+                  </span>
+                  <span
+                    className="text-xs font-light"
+                    style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#8FA3AD", letterSpacing: "0.06em" }}
+                  >
+                    Masaki 先生担当
+                  </span>
+                </div>
+                <p
+                  className="mb-4 font-light text-sm"
+                  style={{
+                    fontFamily: "'Noto Sans JP', sans-serif",
+                    color: "#5A5A5A",
+                    letterSpacing: "0.05em",
+                    lineHeight: 2.0,
+                    borderLeft: "3px solid #1A4A52",
+                    paddingLeft: "1rem",
+                    fontStyle: "italic",
+                  }}
+                >
+                  「受講を始めてから、特にListeningとWritingのスコアが伸びました。先生が自分の弱点に合わせて作ってくれたオリジナルのワークシートで集中的に補強できたのが大きかったです。2ヶ月で17点伸ばすことができました。」
+                </p>
+                <p
+                  className="text-xs font-light text-right"
+                  style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#AAAAAA", letterSpacing: "0.08em" }}
+                >
+                  — M さん（30代・TOEFL® 対策コース受講中）
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================
+          6. BOTTOM CTA
       ============================================================ */}
       <section
         id="contact"
@@ -707,7 +821,7 @@ export default function Home() {
               letterSpacing: "0.3em",
             }}
           >
-            Free Trial Lesson
+            Trial Lesson
           </p>
           <h2
             className="mb-5 font-light"
@@ -732,8 +846,8 @@ export default function Home() {
               lineHeight: 2,
             }}
           >
-            オンライン体験レッスンは無料。Zoomのリンクをお送りするだけ。<br />
-            場所も、時間も、あなたに合わせます。
+            体験レッスンは1回1,000円。<br />
+            そのまま入会いただくと、レッスン料から1,000円を差し引きます。
           </p>
           <Link
             href="/contact"
@@ -757,18 +871,8 @@ export default function Home() {
               el.style.boxShadow = "0 8px 32px rgba(0,0,0,0.2)";
             }}
           >
-            無料体験レッスンを予約する
+            体験レッスンを予約する（1,000円）
           </Link>
-          <p
-            className="mt-10 text-xs font-light"
-            style={{
-              fontFamily: "'Noto Sans JP', sans-serif",
-              color: "rgba(255,255,255,0.38)",
-              letterSpacing: "0.1em",
-            }}
-          >
-            しつこい勧誘は一切行いません。まずはお気軽にどうぞ。
-          </p>
         </div>
       </section>
     </div>

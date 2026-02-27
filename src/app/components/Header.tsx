@@ -8,10 +8,15 @@ const DARK_TEAL = "#1A4A52";
 
 const navItems = [
   { label: "Concept", href: "/#concept" },
-  { label: "Courses", href: "/#courses" },
   { label: "Instructor", href: "/instructor" },
+  { label: "Price", href: "/price" },
   { label: "Flow", href: "/flow" },
   { label: "Contact", href: "/contact" },
+];
+
+const courseDropdown = [
+  { label: "中高生向けコース", href: "/courses/students" },
+  { label: "大人向けコース", href: "/courses/adults" },
 ];
 
 export function Header() {
@@ -19,6 +24,7 @@ export function Header() {
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(!isHome);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [coursesOpen, setCoursesOpen] = useState(false);
 
   useEffect(() => {
     if (!isHome) {
@@ -57,7 +63,94 @@ export function Header() {
 
         {/* Nav Links (desktop) */}
         <nav className="hidden lg:flex items-center gap-9">
-          {navItems.map((item) => {
+          {/* Concept */}
+          {navItems.slice(0, 1).map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="text-xs tracking-widest uppercase transition-all duration-300"
+              style={{
+                color: scrolled ? "#4A4A4A" : "#ffffff",
+                letterSpacing: "0.18em",
+                borderBottom: "1px solid transparent",
+                paddingBottom: "2px",
+              }}
+            >
+              {item.label}
+            </Link>
+          ))}
+
+          {/* Courses dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setCoursesOpen(true)}
+            onMouseLeave={() => setCoursesOpen(false)}
+          >
+            <button
+              className="text-xs tracking-widest uppercase transition-all duration-300 flex flex-col items-center gap-0 border-0 bg-transparent cursor-pointer p-0"
+              style={{
+                color: pathname.startsWith("/courses")
+                  ? DARK_TEAL
+                  : scrolled ? "#4A4A4A" : "#ffffff",
+                fontWeight: pathname.startsWith("/courses") ? 600 : 400,
+                letterSpacing: "0.18em",
+              }}
+            >
+              <span className="flex items-center gap-1 pb-0.5">
+                Courses
+                <svg
+                  width="8" height="5" viewBox="0 0 8 5" fill="none"
+                  style={{
+                    transition: "transform 0.2s",
+                    transform: coursesOpen ? "rotate(180deg)" : "rotate(0deg)",
+                    opacity: 0.6,
+                  }}
+                >
+                  <path d="M1 1l3 3 3-3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+                </svg>
+              </span>
+              <span
+                style={{
+                  display: "block",
+                  height: "1px",
+                  width: "100%",
+                  backgroundColor: pathname.startsWith("/courses") ? DARK_TEAL : "transparent",
+                }}
+              />
+            </button>
+            {coursesOpen && (
+              <div
+                className="absolute top-full left-1/2 pt-3"
+                style={{ transform: "translateX(-50%)", zIndex: 100, minWidth: "180px" }}
+              >
+                <div style={{ backgroundColor: "#F7F6F2", border: "1px solid #EAE6DF", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}>
+                  {courseDropdown.map((c) => (
+                    <Link
+                      key={c.href}
+                      href={c.href}
+                      className="block px-5 py-3.5 text-xs tracking-widest transition-all duration-200"
+                      style={{
+                        fontFamily: "'Noto Sans JP', sans-serif",
+                        color: pathname === c.href ? DARK_TEAL : "#4A4A4A",
+                        fontWeight: pathname === c.href ? 600 : 400,
+                        letterSpacing: "0.08em",
+                        borderBottom: "1px solid #EAE6DF",
+                        whiteSpace: "nowrap",
+                      }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EEF2F3"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
+                      onClick={() => setCoursesOpen(false)}
+                    >
+                      {c.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Remaining nav items */}
+          {navItems.slice(1).map((item) => {
             const isActive =
               item.href.startsWith("/") &&
               !item.href.includes("#") &&
@@ -68,16 +161,10 @@ export function Header() {
                 href={item.href}
                 className="text-xs tracking-widest uppercase transition-all duration-300"
                 style={{
-                  color: isActive
-                    ? DARK_TEAL
-                    : scrolled
-                    ? "#4A4A4A"
-                    : "#ffffff",
+                  color: isActive ? DARK_TEAL : scrolled ? "#4A4A4A" : "#ffffff",
                   fontWeight: isActive ? 600 : 400,
                   letterSpacing: "0.18em",
-                  borderBottom: isActive
-                    ? `1px solid ${DARK_TEAL}`
-                    : "1px solid transparent",
+                  borderBottom: isActive ? `1px solid ${DARK_TEAL}` : "1px solid transparent",
                   paddingBottom: "2px",
                 }}
               >
@@ -109,7 +196,7 @@ export function Header() {
             el.style.color = scrolled ? DARK_TEAL : "#ffffff";
           }}
         >
-          無料体験へ
+          体験レッスンへ
         </Link>
 
         {/* Hamburger (mobile) */}
@@ -151,16 +238,40 @@ export function Header() {
           className="lg:hidden px-6 pb-8 pt-2"
           style={{ backgroundColor: "#F7F6F2", borderTop: "1px solid #EAE6DF" }}
         >
-          {navItems.map((item) => (
+          {navItems.slice(0, 1).map((item) => (
             <Link
               key={item.label}
               href={item.href}
               className="flex items-center py-4 text-sm tracking-widest uppercase"
-              style={{
-                color: DARK_TEAL,
-                letterSpacing: "0.16em",
-                borderBottom: "1px solid #EAE6DF",
-              }}
+              style={{ color: DARK_TEAL, letterSpacing: "0.16em", borderBottom: "1px solid #EAE6DF" }}
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+          {/* Courses sub items */}
+          <div style={{ borderBottom: "1px solid #EAE6DF" }}>
+            <p className="pt-4 pb-2 text-xs tracking-widest uppercase" style={{ color: "#8FA3AD", letterSpacing: "0.16em" }}>
+              Courses
+            </p>
+            {courseDropdown.map((c) => (
+              <Link
+                key={c.href}
+                href={c.href}
+                className="flex items-center pb-3 text-sm"
+                style={{ color: DARK_TEAL, letterSpacing: "0.06em", paddingLeft: "0.75rem" }}
+                onClick={() => setMenuOpen(false)}
+              >
+                — {c.label}
+              </Link>
+            ))}
+          </div>
+          {navItems.slice(1).map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="flex items-center py-4 text-sm tracking-widest uppercase"
+              style={{ color: DARK_TEAL, letterSpacing: "0.16em", borderBottom: "1px solid #EAE6DF" }}
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
@@ -172,7 +283,7 @@ export function Header() {
             style={{ backgroundColor: DARK_TEAL, letterSpacing: "0.16em" }}
             onClick={() => setMenuOpen(false)}
           >
-            無料体験レッスンへ
+            体験レッスンへ（1,000円）
           </Link>
         </div>
       )}

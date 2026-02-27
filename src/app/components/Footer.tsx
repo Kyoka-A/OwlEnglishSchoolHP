@@ -24,7 +24,8 @@ export function Footer() {
             { label: "講師紹介", href: "/instructor" },
             { label: "受講の流れ", href: "/flow" },
             { label: "お問い合わせ", href: "/contact" },
-            { label: "プライバシーポリシー", href: "#" },
+            { label: "プライバシーポリシー", href: "/privacy" },
+            { label: "利用規約", href: "/terms" },
           ].map((link) => (
             <Link
               key={link.label}

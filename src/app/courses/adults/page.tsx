@@ -110,30 +110,106 @@ export default function AdultsCoursePage() {
         </div>
       </div>
 
-      {/* ── INSTRUCTOR BADGE ── */}
-      <div style={{ backgroundColor: "#9CA795", padding: "1.25rem 0" }}>
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <span
-            className="text-xs tracking-widest uppercase"
-            style={{ fontFamily: "'Montserrat', sans-serif", color: "rgba(255,255,255,0.75)", letterSpacing: "0.2em", flexShrink: 0 }}
+      {/* ── INSTRUCTOR SECTION ── */}
+      <section style={{ backgroundColor: "#3D4A3A" }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 py-14">
+          <p
+            className="mb-8 text-xs tracking-widest uppercase"
+            style={{ color: "#9CA795", letterSpacing: "0.28em", fontFamily: "'Montserrat', sans-serif", fontWeight: 500 }}
           >
-            担当講師
-          </span>
-          <span
-            className="text-sm font-light"
-            style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#ffffff", letterSpacing: "0.08em" }}
-          >
-            ●● 先生（英検1級 / TOEIC 945点 / カナダ留学経験）— 全コース担当
-          </span>
-          <Link
-            href="/instructor"
-            className="text-xs ml-auto transition-opacity duration-300 hover:opacity-70"
-            style={{ fontFamily: "'Montserrat', sans-serif", color: "rgba(255,255,255,0.8)", letterSpacing: "0.14em", textDecoration: "underline" }}
-          >
-            講師プロフィール →
-          </Link>
+            — Instructor —
+          </p>
+          <div className="flex flex-col sm:flex-row items-start gap-8">
+            {/* Avatar */}
+            <div className="flex-shrink-0">
+              <div
+                className="overflow-hidden"
+                style={{ width: "110px", height: "110px", borderRadius: "50%", border: "3px solid rgba(255,255,255,0.35)" }}
+              >
+                <img
+                  src="/Masaki.jpg"
+                  alt="Masaki 先生"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "center top" }}
+                />
+              </div>
+            </div>
+            {/* Info */}
+            <div className="flex-1">
+              <div className="flex flex-wrap items-baseline gap-3 mb-3">
+                <h2
+                  style={{
+                    fontFamily: "'Noto Sans JP', sans-serif",
+                    fontSize: "clamp(1.4rem, 2.5vw, 2rem)",
+                    fontWeight: 400,
+                    color: "#ffffff",
+                    letterSpacing: "0.06em",
+                  }}
+                >
+                  Masaki 先生
+                </h2>
+                <span
+                  className="text-xs px-3 py-1"
+                  style={{
+                    fontFamily: "'Noto Sans JP', sans-serif",
+                    backgroundColor: "rgba(255,255,255,0.12)",
+                    color: "#ffffff",
+                    border: "1px solid rgba(255,255,255,0.25)",
+                    letterSpacing: "0.08em",
+                  }}
+                >
+                  全コース担当
+                </span>
+              </div>
+              {/* Credentials */}
+              <div className="flex flex-wrap gap-2 mb-5">
+                {["英検1級", "TOEIC 945点", "カナダ・日本ハーフ", "英語歴２１年", "TOEIC対策", "TOEFL対策"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-3 py-1.5"
+                    style={{
+                      fontFamily: "'Noto Sans JP', sans-serif",
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                      color: "rgba(255,255,255,0.85)",
+                      border: "1px solid rgba(255,255,255,0.2)",
+                      letterSpacing: "0.06em",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              {/* Quote */}
+              <p
+                className="mb-6 text-sm font-light"
+                style={{
+                  fontFamily: "'Noto Sans JP', sans-serif",
+                  color: "rgba(255,255,255,0.75)",
+                  letterSpacing: "0.06em",
+                  lineHeight: 1.9,
+                  borderLeft: "3px solid rgba(156,167,149,0.7)",
+                  paddingLeft: "0.875rem",
+                }}
+              >
+                「英語はずっと自分の一部として育ってきた。だからこそ、本物を届けたい。」
+              </p>
+              <Link
+                href="/instructor"
+                className="inline-flex items-center gap-2 text-xs tracking-widest transition-opacity duration-300 hover:opacity-60"
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  color: "#9CA795",
+                  letterSpacing: "0.18em",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "4px",
+                }}
+              >
+                講師の詳細プロフィールを見る →
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* ── COURSES ── */}
       <section className="py-24" style={{ backgroundColor: "#F7F6F2" }}>
@@ -271,7 +347,7 @@ export default function AdultsCoursePage() {
             className="mb-5 text-xs tracking-widest uppercase"
             style={{ color: "rgba(143,163,173,0.8)", letterSpacing: "0.28em", fontFamily: "'Montserrat', sans-serif" }}
           >
-            Free Trial
+            Trial Lesson
           </p>
           <h2
             className="mb-10 font-light"
@@ -309,7 +385,7 @@ export default function AdultsCoursePage() {
                 el.style.boxShadow = "0 8px 32px rgba(0,0,0,0.15)";
               }}
             >
-              無料体験レッスンを予約する
+              体験レッスンを予約する（1,000円）
             </Link>
             <Link
               href="/instructor"

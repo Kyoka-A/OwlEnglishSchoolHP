@@ -79,8 +79,8 @@ export default function InstructorPage() {
                 style={{ aspectRatio: "4/5", maxWidth: "440px" }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80"
-                  alt="講師A"
+                  src="/Kyoka.jpg"
+                  alt="Kyoka 先生"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "center top", filter: "brightness(0.97) saturate(0.95)" }}
                 />
@@ -133,7 +133,7 @@ export default function InstructorPage() {
                   letterSpacing: "0.06em",
                 }}
               >
-                ○○ 先生
+                Kyoka 先生
               </h2>
               <p
                 className="mb-8 text-sm font-light"
@@ -143,7 +143,7 @@ export default function InstructorPage() {
                   letterSpacing: "0.1em",
                 }}
               >
-                英語教員免許 取得予定
+                英語教員免許 取得予定 / 個別指導塾講師歴３年
               </p>
 
               <div style={{ height: "1px", backgroundColor: "#EAE6DF", marginBottom: "2rem" }} />
@@ -181,7 +181,7 @@ export default function InstructorPage() {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-10">
-                {["英語教員免許 取得予定", "英検3級", "英検準2級", "英検準2級プラス", "英検2級", "中学生指導"].map((tag) => (
+                {["英語教員免許 取得予定", "個別指導塾講師歴３年", "中学生指導 得意", "英検3級〜2級 対応"].map((tag) => (
                   <span
                     key={tag}
                     className="px-3 py-1.5 text-xs"
@@ -253,7 +253,7 @@ export default function InstructorPage() {
                   letterSpacing: "0.06em",
                 }}
               >
-                ●● 先生
+                Masaki 先生
               </h2>
               <p
                 className="mb-8 text-sm font-light"
@@ -263,7 +263,7 @@ export default function InstructorPage() {
                   letterSpacing: "0.1em",
                 }}
               >
-                英検1級 / TOEIC 945点
+                英検1級 / TOEIC 945点 / カナダ・日本ハーフ / 英語歴２１年
               </p>
 
               <div style={{ height: "1px", backgroundColor: "#EAE6DF", marginBottom: "2rem" }} />
@@ -281,7 +281,7 @@ export default function InstructorPage() {
                   paddingLeft: "1rem",
                 }}
               >
-                「本物の英語を、カナダから持ち帰った。<br />その経験をそのままあなたへ。」
+                「英語はずっと自分の一部として育ってきた。<br />だからこそ、本物を届けたい。」
               </p>
 
               <p
@@ -293,15 +293,14 @@ export default function InstructorPage() {
                   lineHeight: 2.1,
                 }}
               >
-                カナダへの長期留学経験を持ち、英検1級・TOEIC 945点を取得。
-                現地で培ったネイティブレベルの自然な英語を、日本人が実際に使える形で指導することを大切にしています。
-                TOEIC・TOEFL対策の論理的なアプローチと、日常英会話のカナダ式スピーキング指導を得意としています。
-                英語を「試験のための科目」ではなく「生きたコミュニケーションツール」として習得することを目指します。
+                カナダと日本のハーフとして生まれ、英語歴２１年。幼少期から英語・日本語の両言語環境で育ち、ネイティブとしての英語感覚と日本語での丁寧な解説を両立できることが最大の強みです。
+                英検1級・TOEIC 945点を取得し、TOEIC® / TOEFL® の試験対策では得点を最大化するための論理的なアプローチを得意としています。
+                「試験のための英語」にとどまらず、実際のコミュニケーションで使える英語力の習得を目指した指導を行います。
               </p>
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-10">
-                {["英検1級", "TOEIC 945点", "カナダ留学経験", "TOEIC対策", "TOEFL対策", "英会話"].map((tag) => (
+                {["英検1級", "TOEIC 945点", "カナダ・日本ハーフ", "英語歴２１年", "TOEIC対策", "TOEFL対策"].map((tag) => (
                   <span
                     key={tag}
                     className="px-3 py-1.5 text-xs"
@@ -353,8 +352,8 @@ export default function InstructorPage() {
                 style={{ aspectRatio: "4/5", maxWidth: "440px" }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
-                  alt="講師B"
+                  src="/Masaki.jpg"
+                  alt="Masaki 先生"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "center top", filter: "brightness(0.97) saturate(0.9)" }}
                 />
@@ -399,7 +398,7 @@ export default function InstructorPage() {
             className="mb-5 text-xs tracking-widest uppercase"
             style={{ color: "rgba(143,163,173,0.8)", letterSpacing: "0.28em", fontFamily: "'Montserrat', sans-serif" }}
           >
-            Free Trial
+            Trial Lesson
           </p>
           <h2
             className="mb-10 font-light"
@@ -411,7 +410,7 @@ export default function InstructorPage() {
               lineHeight: 2,
             }}
           >
-            まずは担当講師と、無料体験レッスンで<br />直接お話しませんか。
+            まずは担当講師と、体験レッスン（1,000円）で<br />直接お話しませんか。
           </h2>
           <Link
             href="/contact"
@@ -435,7 +434,7 @@ export default function InstructorPage() {
               el.style.boxShadow = "0 8px 32px rgba(0,0,0,0.15)";
             }}
           >
-            無料体験レッスンを予約する
+            体験レッスンを予約する（1,000円）
           </Link>
         </div>
       </section>

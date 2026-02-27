@@ -93,7 +93,7 @@ export default function StudentsCoursePage() {
       {/* ── PAGE HERO ── */}
       <div className="relative flex items-end overflow-hidden" style={{ height: "360px" }}>
         <img
-          src="https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?auto=format&fit=crop&w=1920&q=80"
+          src="/student-english-tutoring.jpg"
           alt="中高生向けコース"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "center 40%" }}
@@ -130,39 +130,106 @@ export default function StudentsCoursePage() {
         </div>
       </div>
 
-      {/* ── INSTRUCTOR BADGE ── */}
-      <div style={{ backgroundColor: "#1A4A52", padding: "1.25rem 0" }}>
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <span
-            className="text-xs tracking-widest uppercase"
-            style={{ fontFamily: "'Montserrat', sans-serif", color: "#8FA3AD", letterSpacing: "0.2em", flexShrink: 0 }}
+      {/* ── INSTRUCTOR SECTION ── */}
+      <section style={{ backgroundColor: "#1A4A52" }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 py-14">
+          <p
+            className="mb-8 text-xs tracking-widest uppercase"
+            style={{ color: "#8FA3AD", letterSpacing: "0.28em", fontFamily: "'Montserrat', sans-serif", fontWeight: 500 }}
           >
-            担当講師
-          </span>
-          <span
-            style={{
-              width: "1px",
-              height: "14px",
-              backgroundColor: "rgba(143,163,173,0.4)",
-              display: "none",
-            }}
-            className="hidden sm:block"
-          />
-          <span
-            className="text-sm font-light"
-            style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#ffffff", letterSpacing: "0.08em" }}
-          >
-            ○○ 先生（英語教員免許 取得予定）— 全コース担当
-          </span>
-          <Link
-            href="/instructor"
-            className="text-xs ml-auto transition-opacity duration-300 hover:opacity-70"
-            style={{ fontFamily: "'Montserrat', sans-serif", color: "#8FA3AD", letterSpacing: "0.14em", textDecoration: "underline" }}
-          >
-            講師プロフィール →
-          </Link>
+            — Instructor —
+          </p>
+          <div className="flex flex-col sm:flex-row items-start gap-8">
+            {/* Avatar */}
+            <div className="flex-shrink-0">
+              <div
+                className="overflow-hidden"
+                style={{ width: "110px", height: "110px", borderRadius: "50%", border: "3px solid rgba(255,255,255,0.4)" }}
+              >
+                <img
+                  src="/Kyoka.jpg"
+                  alt="Kyoka 先生"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "center top" }}
+                />
+              </div>
+            </div>
+            {/* Info */}
+            <div className="flex-1">
+              <div className="flex flex-wrap items-baseline gap-3 mb-3">
+                <h2
+                  style={{
+                    fontFamily: "'Noto Sans JP', sans-serif",
+                    fontSize: "clamp(1.4rem, 2.5vw, 2rem)",
+                    fontWeight: 400,
+                    color: "#ffffff",
+                    letterSpacing: "0.06em",
+                  }}
+                >
+                  Kyoka 先生
+                </h2>
+                <span
+                  className="text-xs px-3 py-1"
+                  style={{
+                    fontFamily: "'Noto Sans JP', sans-serif",
+                    backgroundColor: "rgba(255,255,255,0.15)",
+                    color: "#ffffff",
+                    border: "1px solid rgba(255,255,255,0.3)",
+                    letterSpacing: "0.08em",
+                  }}
+                >
+                  全コース担当
+                </span>
+              </div>
+              {/* Credentials */}
+              <div className="flex flex-wrap gap-2 mb-5">
+                {["英語教員免許 取得予定", "個別指導塾講師歴３年", "中学生指導 得意", "英検3級〜2級 対応"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-3 py-1.5"
+                    style={{
+                      fontFamily: "'Noto Sans JP', sans-serif",
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                      color: "rgba(255,255,255,0.85)",
+                      border: "1px solid rgba(255,255,255,0.2)",
+                      letterSpacing: "0.06em",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              {/* Quote */}
+              <p
+                className="mb-6 text-sm font-light"
+                style={{
+                  fontFamily: "'Noto Sans JP', sans-serif",
+                  color: "rgba(255,255,255,0.75)",
+                  letterSpacing: "0.06em",
+                  lineHeight: 1.9,
+                  borderLeft: "3px solid rgba(255,255,255,0.4)",
+                  paddingLeft: "0.875rem",
+                }}
+              >
+                「生徒の目線に寄り添い、一緒に成長し続ける先生でありたい。」
+              </p>
+              <Link
+                href="/instructor"
+                className="inline-flex items-center gap-2 text-xs tracking-widest transition-opacity duration-300 hover:opacity-60"
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  color: "#8FA3AD",
+                  letterSpacing: "0.18em",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "4px",
+                }}
+              >
+                講師の詳細プロフィールを見る →
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* ── COURSES ── */}
       <section className="py-24" style={{ backgroundColor: "#F7F6F2" }}>
@@ -313,7 +380,7 @@ export default function StudentsCoursePage() {
             className="mb-5 text-xs tracking-widest uppercase"
             style={{ color: "rgba(143,163,173,0.8)", letterSpacing: "0.28em", fontFamily: "'Montserrat', sans-serif" }}
           >
-            Free Trial
+            Trial Lesson
           </p>
           <h2
             className="mb-10 font-light"
@@ -326,7 +393,7 @@ export default function StudentsCoursePage() {
             }}
           >
             どのコースが合っているか、<br />
-            まずは無料でご相談ください。
+            体験レッスン（1,000円）でお試しください。
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -351,7 +418,7 @@ export default function StudentsCoursePage() {
                 el.style.boxShadow = "0 8px 32px rgba(0,0,0,0.15)";
               }}
             >
-              無料体験レッスンを予約する
+              体験レッスンを予約する（1,000円）
             </Link>
             <Link
               href="/instructor"

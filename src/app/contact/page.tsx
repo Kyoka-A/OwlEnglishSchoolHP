@@ -1,65 +1,8 @@
 "use client";
 
-import { useState } from "react";
-
-const goals = [
-  "英検3級",
-  "英検準2級",
-  "英検準2級プラス（2級準備）",
-  "英検2級",
-  "英検準1級・1級",
-  "TOEIC® 対策",
-  "TOEFL® 対策",
-  "英会話（カナダ式スピーキング）",
-  "定期テスト対策・基礎力向上",
-  "まだ決まっていない",
-];
+import Link from "next/link";
 
 export default function ContactPage() {
-  const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    age: "",
-    goal: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-  };
-
-  const inputStyle: React.CSSProperties = {
-    width: "100%",
-    padding: "14px 16px",
-    border: "1px solid #EAE6DF",
-    backgroundColor: "#ffffff",
-    fontFamily: "'Noto Sans JP', sans-serif",
-    fontSize: "0.9rem",
-    color: "#4A4A4A",
-    letterSpacing: "0.04em",
-    outline: "none",
-    transition: "border-color 0.2s",
-  };
-
-  const labelStyle: React.CSSProperties = {
-    display: "block",
-    fontFamily: "'Montserrat', sans-serif",
-    fontSize: "0.7rem",
-    color: "#1A4A52",
-    letterSpacing: "0.2em",
-    textTransform: "uppercase",
-    marginBottom: "8px",
-    fontWeight: 500,
-  };
 
   return (
     <div
@@ -124,7 +67,7 @@ export default function ContactPage() {
                   letterSpacing: "0.08em",
                 }}
               >
-                お問い合わせ・<br />無料体験予約
+                お問い合わせ・<br />体験レッスン予約
               </h2>
               <div style={{ height: "2px", width: "40px", backgroundColor: "#1A4A52", margin: "1.5rem 0" }} />
 
@@ -138,16 +81,16 @@ export default function ContactPage() {
                 }}
               >
                 フォームよりお気軽にご連絡ください。
-                24時間以内にご返信いたします。<br /><br />
-                しつこい勧誘は一切行いませんので、まずはどんな些細なことでもお気軽にどうぞ。
+                24時間以内にご返信いたします。
               </p>
 
               <div className="space-y-6">
                 {[
                   { label: "受講形式", value: "完全オンライン（Zoom）" },
-                  { label: "対応時間", value: "月〜土  10:00 – 21:00\n日・祝  10:00 – 18:00" },
+                  { label: "問い合わせ対応時間", value: "月〜金  9:00 – 21:00\n土日祝  不定期" },
+                  { label: "レッスン時間", value: "Kyoka 先生：17:00 – 21:00 の間\nMasaki 先生：18:00 – 21:00 の間" },
                   { label: "対象地域", value: "全国・海外からOK" },
-                  { label: "メール", value: "info@owl-english.example.com" },
+                  { label: "メール", value: "owlenglishschool2025@gmail.com" },
                 ].map((row) => (
                   <div key={row.label}>
                     <p
@@ -174,218 +117,79 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right: Form */}
+            {/* Right: Google Form Link */}
             <div className="lg:col-span-3">
-              {sent ? (
-                /* 送信完了画面 */
+              <div
+                className="flex flex-col items-center justify-center text-center py-20 px-8"
+                style={{ backgroundColor: "#ffffff", border: "1px solid #EAE6DF", minHeight: "420px" }}
+              >
                 <div
-                  className="flex flex-col items-center justify-center text-center py-20 px-8"
-                  style={{ backgroundColor: "#ffffff", border: "1px solid #EAE6DF", minHeight: "500px" }}
+                  className="mb-8 flex items-center justify-center"
+                  style={{ width: "64px", height: "64px", backgroundColor: "#F0F4F5", border: "2px solid #1A4A52" }}
                 >
-                  <div
-                    className="mb-8 flex items-center justify-center rounded-full"
-                    style={{ width: "64px", height: "64px", backgroundColor: "#F0F4F5", border: "2px solid #1A4A52" }}
-                  >
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                      <path d="M5 13l4 4L19 7" stroke="#1A4A52" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  <p
-                    className="mb-3"
-                    style={{
-                      fontFamily: "'Montserrat', sans-serif",
-                      fontSize: "1rem",
-                      fontWeight: 500,
-                      color: "#1A4A52",
-                      letterSpacing: "0.15em",
-                    }}
-                  >
-                    THANK YOU
-                  </p>
-                  <p
-                    className="mb-2 font-light"
-                    style={{
-                      fontFamily: "'Noto Sans JP', sans-serif",
-                      fontSize: "1rem",
-                      color: "#4A4A4A",
-                      letterSpacing: "0.06em",
-                    }}
-                  >
-                    お問い合わせありがとうございます。
-                  </p>
-                  <p
-                    className="font-light text-sm"
-                    style={{
-                      fontFamily: "'Noto Sans JP', sans-serif",
-                      color: "#7A7A7A",
-                      letterSpacing: "0.05em",
-                      lineHeight: 2,
-                    }}
-                  >
-                    24時間以内にご入力いただいたメールアドレス宛に<br />
-                    ご返信いたします。しばらくお待ちください。
-                  </p>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#1A4A52" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </div>
-              ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  className="space-y-7"
-                  style={{ backgroundColor: "#ffffff", padding: "2.5rem", border: "1px solid #EAE6DF" }}
+                <p
+                  className="mb-2"
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontSize: "0.7rem",
+                    color: "#8FA3AD",
+                    letterSpacing: "0.24em",
+                    textTransform: "uppercase",
+                  }}
                 >
-                  {/* Name */}
-                  <div>
-                    <label htmlFor="name" style={labelStyle}>
-                      お名前 <span style={{ color: "#C0392B", fontSize: "0.7rem" }}>*</span>
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      placeholder="例）山田 太郎"
-                      value={form.name}
-                      onChange={handleChange}
-                      style={inputStyle}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "#1A4A52")}
-                      onBlur={(e) => (e.currentTarget.style.borderColor = "#EAE6DF")}
-                    />
-                  </div>
-
-                  {/* Email */}
-                  <div>
-                    <label htmlFor="email" style={labelStyle}>
-                      メールアドレス <span style={{ color: "#C0392B", fontSize: "0.7rem" }}>*</span>
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      placeholder="例）example@email.com"
-                      value={form.email}
-                      onChange={handleChange}
-                      style={inputStyle}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "#1A4A52")}
-                      onBlur={(e) => (e.currentTarget.style.borderColor = "#EAE6DF")}
-                    />
-                  </div>
-
-                  {/* Phone & Age */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label htmlFor="phone" style={labelStyle}>
-                        電話番号（任意）
-                      </label>
-                      <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        placeholder="例）080-XXXX-XXXX"
-                        value={form.phone}
-                        onChange={handleChange}
-                        style={inputStyle}
-                        onFocus={(e) => (e.currentTarget.style.borderColor = "#1A4A52")}
-                        onBlur={(e) => (e.currentTarget.style.borderColor = "#EAE6DF")}
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="age" style={labelStyle}>
-                        学年・年齢
-                      </label>
-                      <input
-                        id="age"
-                        name="age"
-                        type="text"
-                        placeholder="例）中学2年生 / 28歳"
-                        value={form.age}
-                        onChange={handleChange}
-                        style={inputStyle}
-                        onFocus={(e) => (e.currentTarget.style.borderColor = "#1A4A52")}
-                        onBlur={(e) => (e.currentTarget.style.borderColor = "#EAE6DF")}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Goal */}
-                  <div>
-                    <label htmlFor="goal" style={labelStyle}>
-                      ご興味のあるコース <span style={{ color: "#C0392B", fontSize: "0.7rem" }}>*</span>
-                    </label>
-                    <select
-                      id="goal"
-                      name="goal"
-                      required
-                      value={form.goal}
-                      onChange={handleChange}
-                      style={{ ...inputStyle, appearance: "none", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A4A52' strokeWidth='1.5' fill='none'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 16px center" }}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "#1A4A52")}
-                      onBlur={(e) => (e.currentTarget.style.borderColor = "#EAE6DF")}
-                    >
-                      <option value="">選択してください</option>
-                      {goals.map((g) => (
-                        <option key={g} value={g}>
-                          {g}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label htmlFor="message" style={labelStyle}>
-                      ご質問・ご要望（任意）
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      placeholder="現在のお悩み、ご希望の受講スケジュール、ご質問など、なんでもお気軽にお書きください。"
-                      value={form.message}
-                      onChange={handleChange}
-                      style={{ ...inputStyle, resize: "vertical" }}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "#1A4A52")}
-                      onBlur={(e) => (e.currentTarget.style.borderColor = "#EAE6DF")}
-                    />
-                  </div>
-
-                  {/* Privacy */}
-                  <p
-                    className="text-xs font-light"
-                    style={{
-                      fontFamily: "'Noto Sans JP', sans-serif",
-                      color: "#9A9A9A",
-                      letterSpacing: "0.04em",
-                      lineHeight: 1.8,
-                    }}
-                  >
-                    ご入力いただいた個人情報は、お問い合わせへの返信・体験レッスンのご案内のみに使用します。第三者への提供は一切行いません。
-                  </p>
-
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    className="w-full py-5 text-sm text-white tracking-widest transition-all duration-300"
-                    style={{
-                      backgroundColor: "#1A4A52",
-                      fontFamily: "'Noto Sans JP', sans-serif",
-                      fontWeight: 500,
-                      letterSpacing: "0.16em",
-                      border: "none",
-                      cursor: "pointer",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#153d44";
-                      (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-1px)";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#1A4A52";
-                      (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)";
-                    }}
-                  >
-                    送信する（無料体験を申し込む）
-                  </button>
-                </form>
-              )}
+                  Google Form
+                </p>
+                <p
+                  className="mb-3 font-light"
+                  style={{
+                    fontFamily: "'Noto Sans JP', sans-serif",
+                    fontSize: "clamp(1rem, 2vw, 1.25rem)",
+                    color: "#1A4A52",
+                    letterSpacing: "0.06em",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  下のボタンからフォームへ<br />お進みください。
+                </p>
+                <p
+                  className="mb-10 text-sm font-light"
+                  style={{
+                    fontFamily: "'Noto Sans JP', sans-serif",
+                    color: "#8A8A8A",
+                    letterSpacing: "0.05em",
+                    lineHeight: 1.9,
+                  }}
+                >
+                  24時間以内にご返信いたします。
+                </p>
+                <a
+                  href="https://forms.gle/XuHVBrNu6UELUxv1A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full py-5 text-sm text-white text-center tracking-widest transition-all duration-300"
+                  style={{
+                    backgroundColor: "#1A4A52",
+                    fontFamily: "'Noto Sans JP', sans-serif",
+                    fontWeight: 500,
+                    letterSpacing: "0.16em",
+                    maxWidth: "360px",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#153d44";
+                    (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#1A4A52";
+                    (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+                  }}
+                >
+                  お問い合わせ・体験レッスン予約 →
+                </a>
+              </div>
             </div>
           </div>
         </div>

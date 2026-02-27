@@ -6,7 +6,7 @@ import { Footer } from "./components/Footer";
 export const metadata: Metadata = {
   title: "Owl English School | オンライン完全個別英語家庭教師",
   description:
-    "全国どこからでも受講できる完全マンツーマン英語家庭教師。英検・TOEIC・TOEFL・英会話を完全個別カリキュラムで提供。無料体験レッスン受付中。",
+    "全国どこからでも受講できる完全マンツーマン英語家庭教師。英検・TOEIC・TOEFL・英会話を完全個別カリキュラムで提供。体験レッスン1,000円・入会時にレッスン料から返金。",
 };
 
 export default function RootLayout({
